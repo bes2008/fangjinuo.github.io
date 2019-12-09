@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 5 Pagination | Tutorial</title>
+  <meta name="description" content="Chapter 5 Pagination | Tutorial for langx-java, easyjson, sqlhelper" />
+  <meta name="generator" content="bookdown 0.16 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 5 Pagination | Tutorial" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Chapter 5 Pagination | Tutorial for langx-java, easyjson, sqlhelper" />
+  <meta name="github-repo" content="fangjinuo/book" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 5 Pagination | Tutorial" />
+  
+  <meta name="twitter:description" content="Chapter 5 Pagination | Tutorial for langx-java, easyjson, sqlhelper" />
+  
+
+<meta name="author" content="fangjinuo" />
+
+
+<meta name="date" content="2019-12-09" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="sqlhelper-outline.html"/>
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="https://github.com/fangjinuo/book">Tutorial</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="part"><span><b>langx-java</b></span></li>
+<li class="chapter" data-level="1" data-path="langx-java-outline.html"><a href="langx-java-outline.html"><i class="fa fa-check"></i><b>1</b> outline</a><ul>
+<li class="chapter" data-level="1.1" data-path="langx-java-outline.html"><a href="langx-java-outline.html#repository"><i class="fa fa-check"></i><b>1.1</b> Repository</a></li>
+<li class="chapter" data-level="1.2" data-path="langx-java-outline.html"><a href="langx-java-outline.html#langx-java_version"><i class="fa fa-check"></i><b>1.2</b> Versions</a></li>
+<li class="chapter" data-level="1.3" data-path="langx-java-outline.html"><a href="langx-java-outline.html#langx-java_features"><i class="fa fa-check"></i><b>1.3</b> Features</a></li>
+<li class="chapter" data-level="1.4" data-path="langx-java-outline.html"><a href="langx-java-outline.html#langx-java_contact"><i class="fa fa-check"></i><b>1.4</b> Contact</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="langx-java-installation.html"><a href="langx-java-installation.html"><i class="fa fa-check"></i><b>2</b> Installation</a></li>
+<li class="chapter" data-level="3" data-path="langx-java-references.html"><a href="langx-java-references.html"><i class="fa fa-check"></i><b>3</b> references</a><ul>
+<li class="chapter" data-level="3.1" data-path="langx-java-references.html"><a href="langx-java-references.html#basic-utils"><i class="fa fa-check"></i><b>3.1</b> basic utils</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="langx-java-references.html"><a href="langx-java-references.html#emptys"><i class="fa fa-check"></i><b>3.1.1</b> Emptys</a></li>
+<li class="chapter" data-level="3.1.2" data-path="langx-java-references.html"><a href="langx-java-references.html#objects"><i class="fa fa-check"></i><b>3.1.2</b> Objects</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>SQLHelper</b></span></li>
+<li class="chapter" data-level="4" data-path="sqlhelper-outline.html"><a href="sqlhelper-outline.html"><i class="fa fa-check"></i><b>4</b> Outline</a><ul>
+<li class="chapter" data-level="4.1" data-path="sqlhelper-outline.html"><a href="sqlhelper-outline.html#versions"><i class="fa fa-check"></i><b>4.1</b> Versions</a></li>
+<li class="chapter" data-level="4.2" data-path="sqlhelper-outline.html"><a href="sqlhelper-outline.html#features"><i class="fa fa-check"></i><b>4.2</b> Features</a></li>
+<li class="chapter" data-level="4.3" data-path="sqlhelper-outline.html"><a href="sqlhelper-outline.html#supports-databases"><i class="fa fa-check"></i><b>4.3</b> Supports Databases</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="sqlhelper-pagination.html"><a href="sqlhelper-pagination.html"><i class="fa fa-check"></i><b>5</b> Pagination</a><ul>
+<li class="chapter" data-level="5.1" data-path="sqlhelper-pagination.html"><a href="sqlhelper-pagination.html#sqlhelper_configuration"><i class="fa fa-check"></i><b>5.1</b> Configuration</a></li>
+<li class="chapter" data-level="5.2" data-path="sqlhelper-pagination.html"><a href="sqlhelper-pagination.html#sqlhelper_mybatis"><i class="fa fa-check"></i><b>5.2</b> MyBatis Application</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="sqlhelper-pagination.html"><a href="sqlhelper-pagination.html#sqlhelper_mybatis_installation"><i class="fa fa-check"></i><b>5.2.1</b> installation</a></li>
+<li class="chapter" data-level="5.2.2" data-path="sqlhelper-pagination.html"><a href="sqlhelper-pagination.html#sqlhelper_mybatis_configuration"><i class="fa fa-check"></i><b>5.2.2</b> specified configurations</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="sqlhelper-pagination.html"><a href="sqlhelper-pagination.html#sqlhelper_mybatis_springboot"><i class="fa fa-check"></i><b>5.3</b> MyBatis + Spring Boot Application</a></li>
+<li class="chapter" data-level="5.4" data-path="sqlhelper-pagination.html"><a href="sqlhelper-pagination.html#sqlhelper_mybatisplus_springboot"><i class="fa fa-check"></i><b>5.4</b> MyBatis + MyBatis-plus + Spring Boot Application</a></li>
+<li class="chapter" data-level="5.5" data-path="sqlhelper-pagination.html"><a href="sqlhelper-pagination.html#sqlhelper_mirgate_pagehelper"><i class="fa fa-check"></i><b>5.5</b> Migrate from PageHelper</a></li>
+<li class="chapter" data-level="5.6" data-path="sqlhelper-pagination.html"><a href="sqlhelper-pagination.html#sqlhelper_springjdbc"><i class="fa fa-check"></i><b>5.6</b> SpringJDBC Application</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://fangjinuo.github.io" target="blank">Github Pages</a></li>
+<li><a href="https://github.com/fangjinuo/book" target="blank">Github</a></li>
+<li><a href="https://fangjinuo.gitee.io/docs" target="blank">Gitee Pages</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Tutorial</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="sqlhelper_pagination" class="section level1">
+<h1><span class="header-section-number">Chapter 5</span> Pagination</h1>
+<div id="sqlhelper_configuration" class="section level2">
+<h2><span class="header-section-number">5.1</span> Configuration</h2>
+<p>There are two types of configurations for pagination:</p>
+<ol style="list-style-type: decimal">
+<li>Instrumentator configurations:</li>
+</ol>
+<p>(you can find out <strong>com.jn.sqlhelper.dialect.pagination.SQLInstrumentConfig</strong> from source)</p>
+<ul>
+<li><strong><em>dialect</em></strong>: the database dialect, if sqlhelper can’t find a right database dialect, you can use it</li>
+<li><strong><em>dialectClassName</em></strong>: your custom dialect class</li>
+<li><strong><em>cacheInstrumentedSql</em></strong>: whether cache all instrumentd sql, use it to avoid instrument a sql again, defualt is <strong>false</strong></li>
+<li><strong><em>subqueryPagingStartFlag</em></strong>: the start flag of a subquery sql , the default value is <strong>[PAGING_START]</strong></li>
+<li><strong><em>subqueryPagingEndFlag</em></strong>: the end flag of a subquery sql, the defulat value is <strong>[PAGING_END]</strong></li>
+</ul>
+<ol start="2" style="list-style-type: decimal">
+<li>pagination plugin common configurations:</li>
+</ol>
+<p>(you can find out <strong>com.jn.sqlhelper.dialect.pagination.PaginationProperties</strong> from source)</p>
+<ul>
+<li><strong><em>count</em></strong> : where execute <code>select count</code>, the default value is <strong>true</strong></li>
+<li><strong><em>defaultPageSize</em></strong>: the default page size, if your pageNo &gt;0, but the pageSize is not set, will using it. the default value is <strong>10</strong></li>
+<li><strong><em>useLastPageIfPageNoOut</em></strong>: whether get the last page records when your pageNo &gt; maxPages, the defulat value is <strong>false</strong></li>
+</ul>
+<p>Some plugin specified configurations will be described in themselves.</p>
+
+</div>
+<div id="sqlhelper_mybatis" class="section level2">
+<h2><span class="header-section-number">5.2</span> MyBatis Application</h2>
+<hr />
+<div id="sqlhelper_mybatis_installation" class="section level3">
+<h3><span class="header-section-number">5.2.1</span> installation</h3>
+<ol style="list-style-type: decimal">
+<li><p>import dependencies:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode xml"><code class="sourceCode xml"><a class="sourceLine" id="cb7-1" title="1"><span class="kw">&lt;dependency&gt;</span></a>
+<a class="sourceLine" id="cb7-2" title="2">    <span class="kw">&lt;groupId&gt;</span>com.github.fangjinuo.sqlhelper<span class="kw">&lt;/groupId&gt;</span></a>
+<a class="sourceLine" id="cb7-3" title="3">    <span class="kw">&lt;artifactId&gt;</span>sqlhelper-dialect<span class="kw">&lt;/artifactId&gt;</span></a>
+<a class="sourceLine" id="cb7-4" title="4">    <span class="kw">&lt;version&gt;</span>${sqlhelper.version}<span class="kw">&lt;/version&gt;</span></a>
+<a class="sourceLine" id="cb7-5" title="5"><span class="kw">&lt;/dependency&gt;</span></a></code></pre></div></li>
+<li><p>config <strong>mybatis-config.xml</strong>:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode xml"><code class="sourceCode xml"><a class="sourceLine" id="cb8-1" title="1"><span class="kw">&lt;configuration&gt;</span></a>
+<a class="sourceLine" id="cb8-2" title="2">     ...</a>
+<a class="sourceLine" id="cb8-3" title="3">     <span class="kw">&lt;databaseIdProvider</span><span class="ot"> type=</span><span class="st">&quot;DB_VENDOR&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb8-4" title="4">         <span class="kw">&lt;property</span><span class="ot"> name=</span><span class="st">&quot;SQL Server&quot;</span><span class="ot"> value=</span><span class="st">&quot;sqlserver&quot;</span><span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb8-5" title="5">         <span class="kw">&lt;property</span><span class="ot"> name=</span><span class="st">&quot;DB2&quot;</span><span class="ot"> value=</span><span class="st">&quot;db2&quot;</span><span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb8-6" title="6">         <span class="kw">&lt;property</span><span class="ot"> name=</span><span class="st">&quot;Oracle&quot;</span><span class="ot"> value=</span><span class="st">&quot;oracle&quot;</span> <span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb8-7" title="7">     <span class="kw">&lt;/databaseIdProvider&gt;</span></a>
+<a class="sourceLine" id="cb8-8" title="8">     ...</a>
+<a class="sourceLine" id="cb8-9" title="9">     <span class="kw">&lt;settings&gt;</span></a>
+<a class="sourceLine" id="cb8-10" title="10">         ...</a>
+<a class="sourceLine" id="cb8-11" title="11">         <span class="kw">&lt;setting</span><span class="ot"> name=</span><span class="st">&quot;defaultScriptingLanguage&quot;</span><span class="ot"> value=</span><span class="st">&quot;com.jn.sqlhelper.mybatis.plugins.pagination.CustomScriptLanguageDriver&quot;</span> <span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb8-12" title="12">         ...</a>
+<a class="sourceLine" id="cb8-13" title="13">     <span class="kw">&lt;/settings&gt;</span></a>
+<a class="sourceLine" id="cb8-14" title="14">         ...</a>
+<a class="sourceLine" id="cb8-15" title="15"><span class="kw">&lt;/configuration&gt;</span></a>
+<a class="sourceLine" id="cb8-16" title="16"></a>
+<a class="sourceLine" id="cb8-17" title="17"><span class="kw">&lt;plugins&gt;</span></a>
+<a class="sourceLine" id="cb8-18" title="18">    <span class="kw">&lt;plugin</span><span class="ot"> interceptor=</span><span class="st">&quot;com.jn.sqlhelper.mybatis.plugins.pagination.MybatisPaginationPlugin&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb8-19" title="19">        <span class="kw">&lt;property</span><span class="ot"> name</span> <span class="ot">=</span><span class="st">&quot;sqlhelper.mybatis.instrumentor.dialect&quot;</span><span class="ot"> value=</span><span class="st">&quot;mysql&quot;</span> <span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb8-20" title="20">        <span class="kw">&lt;property</span><span class="ot"> name</span> <span class="ot">=</span><span class="st">&quot;sqlhelper.mybatis.instrumentor.cacheInstruemtedSql&quot;</span><span class="ot"> value=</span><span class="st">&quot;true&quot;</span> <span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb8-21" title="21">        <span class="kw">&lt;property</span><span class="ot"> name</span> <span class="ot">=</span><span class="st">&quot;sqlhelper.mybatis.pagination.count&quot;</span><span class="ot"> value=</span><span class="st">&quot;true&quot;</span> <span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb8-22" title="22">        <span class="kw">&lt;property</span><span class="ot"> name</span> <span class="ot">=</span><span class="st">&quot;sqlhelper.mybatis.pagination.count&quot;</span><span class="ot"> value=</span><span class="st">&quot;defaultPageSize&quot;</span> <span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb8-23" title="23">        <span class="kw">&lt;property</span><span class="ot"> name</span> <span class="ot">=</span><span class="st">&quot;sqlhelper.mybatis.pagination.count&quot;</span><span class="ot"> value=</span><span class="st">&quot;useLastPageIfPageNoOut&quot;</span> <span class="kw">/&gt;</span>       </a>
+<a class="sourceLine" id="cb8-24" title="24">        <span class="kw">&lt;property</span><span class="ot"> name</span> <span class="ot">=</span><span class="st">&quot;sqlhelper.mybatis.pagination.count&quot;</span><span class="ot"> value=</span><span class="st">&quot;_COUNT&quot;</span> <span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb8-25" title="25">    <span class="kw">&lt;/plugin&gt;</span></a>
+<a class="sourceLine" id="cb8-26" title="26"><span class="kw">&lt;/plugins&gt;</span></a></code></pre></div></li>
+<li><p>Usage</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb9-1" title="1">    <span class="at">@GetMapping</span>(<span class="st">&quot;/_useMyBatis&quot;</span>)</a>
+<a class="sourceLine" id="cb9-2" title="2">    <span class="kw">public</span> PagingResult <span class="fu">list_useMyBatis</span>(</a>
+<a class="sourceLine" id="cb9-3" title="3">            <span class="at">@RequestParam</span>(name = <span class="st">&quot;pageNo&quot;</span>, required = <span class="kw">false</span>) <span class="bu">Integer</span> pageNo,</a>
+<a class="sourceLine" id="cb9-4" title="4">            <span class="at">@RequestParam</span>(name = <span class="st">&quot;pageSize&quot;</span>, required = <span class="kw">false</span>) <span class="bu">Integer</span> pageSize,</a>
+<a class="sourceLine" id="cb9-5" title="5">            <span class="at">@RequestParam</span>(name = <span class="st">&quot;sort&quot;</span>, required = <span class="kw">false</span>) <span class="bu">String</span> sort) {</a>
+<a class="sourceLine" id="cb9-6" title="6">        User queryCondition = <span class="kw">new</span> <span class="fu">User</span>();</a>
+<a class="sourceLine" id="cb9-7" title="7">        queryCondition.<span class="fu">setAge</span>(<span class="dv">10</span>);</a>
+<a class="sourceLine" id="cb9-8" title="8"></a>
+<a class="sourceLine" id="cb9-9" title="9">        PagingRequest request = SqlPaginations.<span class="fu">preparePagination</span>(pageNo == <span class="kw">null</span> ? <span class="dv">1</span> : pageNo, pageSize == <span class="kw">null</span> ? -<span class="dv">1</span> : pageSize, sort);</a>
+<a class="sourceLine" id="cb9-10" title="10"></a>
+<a class="sourceLine" id="cb9-11" title="11">        <span class="bu">List</span>&lt;User&gt; users = userDao.<span class="fu">selectByLimit</span>(queryCondition);</a>
+<a class="sourceLine" id="cb9-12" title="12">        <span class="bu">String</span> json = JSONBuilderProvider.<span class="fu">simplest</span>().<span class="fu">toJson</span>(request.<span class="fu">getResult</span>());</a>
+<a class="sourceLine" id="cb9-13" title="13">        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(json);</a>
+<a class="sourceLine" id="cb9-14" title="14">        json = JSONBuilderProvider.<span class="fu">simplest</span>().<span class="fu">toJson</span>(users);</a>
+<a class="sourceLine" id="cb9-15" title="15">        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(json);</a>
+<a class="sourceLine" id="cb9-16" title="16">        <span class="kw">return</span> request.<span class="fu">getResult</span>();</a>
+<a class="sourceLine" id="cb9-17" title="17">    }</a></code></pre></div></li>
+</ol>
+<p>you can find more examples from <strong>UserController</strong> class in <a href="https://github.com/fangjinuo/sqlhelper/blob/master/sqlhelper-examples/src/main/java/com/jn/sqlhelper/examples/common/controller/UserController.java">sqlhelper-exmples</a></p>
+</div>
+<div id="sqlhelper_mybatis_configuration" class="section level3">
+<h3><span class="header-section-number">5.2.2</span> specified configurations</h3>
+<p>to performance, supply a count sql statement cache , you can configure it like:</p>
+<ul>
+<li><strong><em>countCacheInitCapacity</em></strong>: the initial capacity of count sql statement cache, the default value is <strong>10</strong></li>
+<li><strong><em>countCacheMaxCapacity</em></strong>: the max capacity of count sql statement cache, the default values is <strong>1000</strong>, if you don’t want use it , you can close it with any value &lt; 1</li>
+<li><strong><em>countCacheExpireInSeconds</em></strong>: the TTL of a count sql statement, the default value is <strong>5</strong></li>
+<li><strong><em>countSuffix</em></strong> : if you custom some count yourself, using it. the default value is **_COUNT**</li>
+</ul>
+<p>more information you will find out at <strong>com.jn.sqlhelper.mybatis.plugins.pagination.PaginationPluginConfig</strong></p>
+
+</div>
+</div>
+<div id="sqlhelper_mybatis_springboot" class="section level2">
+<h2><span class="header-section-number">5.3</span> MyBatis + Spring Boot Application</h2>
+
+</div>
+<div id="sqlhelper_mybatisplus_springboot" class="section level2">
+<h2><span class="header-section-number">5.4</span> MyBatis + MyBatis-plus + Spring Boot Application</h2>
+
+</div>
+<div id="sqlhelper_mirgate_pagehelper" class="section level2">
+<h2><span class="header-section-number">5.5</span> Migrate from PageHelper</h2>
+
+</div>
+<div id="sqlhelper_springjdbc" class="section level2">
+<h2><span class="header-section-number">5.6</span> SpringJDBC Application</h2>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="sqlhelper-outline.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": false,
+"linkedin": false,
+"weibo": true,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "github", "twitter", "linkedin", "weibo", "instapaper", "vk"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/fangjinuo/book/edit/master/sqlhelper/pagination_configuration.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": [["toturial.pdf", "PDF"], ["toturial.epub", "EPUB"]],
+"toc": {
+"collapse": "subsection",
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "fixed"
+},
+"search": true,
+"info": true
+});
+});
+</script>
+
+</body>
+
+</html>
