@@ -153,20 +153,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.3" data-path="sqlhelper-outline.html"><a href="sqlhelper-outline.html#supports-databases"><i class="fa fa-check"></i><b>4.3</b> Supports Databases</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="sqlhelper-pagination.html"><a href="sqlhelper-pagination.html"><i class="fa fa-check"></i><b>5</b> Pagination</a><ul>
-<li class="chapter" data-level="5.1" data-path="sqlhelper-pagination.html"><a href="sqlhelper-pagination.html#sqlhelper_configuration"><i class="fa fa-check"></i><b>5.1</b> Configuration</a></li>
+<li class="chapter" data-level="5.1" data-path="sqlhelper-pagination.html"><a href="sqlhelper-pagination.html#pagination_configuration"><i class="fa fa-check"></i><b>5.1</b> Configuration</a></li>
 <li class="chapter" data-level="5.2" data-path="sqlhelper-pagination.html"><a href="sqlhelper-pagination.html#sqlhelper_mybatis"><i class="fa fa-check"></i><b>5.2</b> MyBatis Application</a><ul>
 <li class="chapter" data-level="5.2.1" data-path="sqlhelper-pagination.html"><a href="sqlhelper-pagination.html#sqlhelper_mybatis_installation"><i class="fa fa-check"></i><b>5.2.1</b> installation</a></li>
-<li class="chapter" data-level="5.2.2" data-path="sqlhelper-pagination.html"><a href="sqlhelper-pagination.html#sqlhelper_mybatis_configuration"><i class="fa fa-check"></i><b>5.2.2</b> specified configurations</a></li>
+<li class="chapter" data-level="5.2.2" data-path="sqlhelper-pagination.html"><a href="sqlhelper-pagination.html#sqlhelper_mybatis_usage"><i class="fa fa-check"></i><b>5.2.2</b> Usage</a></li>
+<li class="chapter" data-level="5.2.3" data-path="sqlhelper-pagination.html"><a href="sqlhelper-pagination.html#sqlhelper_mybatis_configuration"><i class="fa fa-check"></i><b>5.2.3</b> specified configurations</a></li>
 </ul></li>
-<li class="chapter" data-level="5.3" data-path="sqlhelper-pagination.html"><a href="sqlhelper-pagination.html#sqlhelper_mybatis_springboot"><i class="fa fa-check"></i><b>5.3</b> MyBatis + Spring Boot Application</a></li>
+<li class="chapter" data-level="5.3" data-path="sqlhelper-pagination.html"><a href="sqlhelper-pagination.html#sqlhelper_mybatis_springboot"><i class="fa fa-check"></i><b>5.3</b> MyBatis + Spring Boot</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="sqlhelper-pagination.html"><a href="sqlhelper-pagination.html#sqlhelper_mybatis_springboot_installation"><i class="fa fa-check"></i><b>5.3.1</b> installation</a></li>
+<li class="chapter" data-level="5.3.2" data-path="sqlhelper-pagination.html"><a href="sqlhelper-pagination.html#sqlhelper_mybatis_spring_usage"><i class="fa fa-check"></i><b>5.3.2</b> Usage</a></li>
+</ul></li>
 <li class="chapter" data-level="5.4" data-path="sqlhelper-pagination.html"><a href="sqlhelper-pagination.html#sqlhelper_mybatisplus_springboot"><i class="fa fa-check"></i><b>5.4</b> MyBatis + MyBatis-plus + Spring Boot Application</a></li>
 <li class="chapter" data-level="5.5" data-path="sqlhelper-pagination.html"><a href="sqlhelper-pagination.html#sqlhelper_mirgate_pagehelper"><i class="fa fa-check"></i><b>5.5</b> Migrate from PageHelper</a></li>
 <li class="chapter" data-level="5.6" data-path="sqlhelper-pagination.html"><a href="sqlhelper-pagination.html#sqlhelper_springjdbc"><i class="fa fa-check"></i><b>5.6</b> SpringJDBC Application</a></li>
 </ul></li>
 <li class="divider"></li>
-<li><a href="https://fangjinuo.github.io" target="blank">Github Pages</a></li>
-<li><a href="https://github.com/fangjinuo/book" target="blank">Github</a></li>
-<li><a href="https://fangjinuo.gitee.io/docs" target="blank">Gitee Pages</a></li>
+<li><a href="https://fangjinuo.github.io" target="_blank">Github Pages</a></li>
+<li><a href="https://github.com/fangjinuo/book" target="_blank">Github</a></li>
+<li><a href="https://fangjinuo.gitee.io/docs" target="_blank">Gitee Pages</a></li>
 
 </ul>
 
@@ -187,7 +191,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="sqlhelper_pagination" class="section level1">
 <h1><span class="header-section-number">Chapter 5</span> Pagination</h1>
-<div id="sqlhelper_configuration" class="section level2">
+<div id="pagination_configuration" class="section level2">
 <h2><span class="header-section-number">5.1</span> Configuration</h2>
 <p>There are two types of configurations for pagination:</p>
 <ol style="list-style-type: decimal">
@@ -222,7 +226,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>import dependencies:</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode xml"><code class="sourceCode xml"><a class="sourceLine" id="cb7-1" title="1"><span class="kw">&lt;dependency&gt;</span></a>
 <a class="sourceLine" id="cb7-2" title="2">    <span class="kw">&lt;groupId&gt;</span>com.github.fangjinuo.sqlhelper<span class="kw">&lt;/groupId&gt;</span></a>
-<a class="sourceLine" id="cb7-3" title="3">    <span class="kw">&lt;artifactId&gt;</span>sqlhelper-dialect<span class="kw">&lt;/artifactId&gt;</span></a>
+<a class="sourceLine" id="cb7-3" title="3">    <span class="kw">&lt;artifactId&gt;</span>sqlhelper-mybatis<span class="kw">&lt;/artifactId&gt;</span></a>
 <a class="sourceLine" id="cb7-4" title="4">    <span class="kw">&lt;version&gt;</span>${sqlhelper.version}<span class="kw">&lt;/version&gt;</span></a>
 <a class="sourceLine" id="cb7-5" title="5"><span class="kw">&lt;/dependency&gt;</span></a></code></pre></div></li>
 <li><p>config <strong>mybatis-config.xml</strong>:</p>
@@ -247,12 +251,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb8-19" title="19">        <span class="kw">&lt;property</span><span class="ot"> name</span> <span class="ot">=</span><span class="st">&quot;sqlhelper.mybatis.instrumentor.dialect&quot;</span><span class="ot"> value=</span><span class="st">&quot;mysql&quot;</span> <span class="kw">/&gt;</span></a>
 <a class="sourceLine" id="cb8-20" title="20">        <span class="kw">&lt;property</span><span class="ot"> name</span> <span class="ot">=</span><span class="st">&quot;sqlhelper.mybatis.instrumentor.cacheInstruemtedSql&quot;</span><span class="ot"> value=</span><span class="st">&quot;true&quot;</span> <span class="kw">/&gt;</span></a>
 <a class="sourceLine" id="cb8-21" title="21">        <span class="kw">&lt;property</span><span class="ot"> name</span> <span class="ot">=</span><span class="st">&quot;sqlhelper.mybatis.pagination.count&quot;</span><span class="ot"> value=</span><span class="st">&quot;true&quot;</span> <span class="kw">/&gt;</span></a>
-<a class="sourceLine" id="cb8-22" title="22">        <span class="kw">&lt;property</span><span class="ot"> name</span> <span class="ot">=</span><span class="st">&quot;sqlhelper.mybatis.pagination.count&quot;</span><span class="ot"> value=</span><span class="st">&quot;defaultPageSize&quot;</span> <span class="kw">/&gt;</span></a>
-<a class="sourceLine" id="cb8-23" title="23">        <span class="kw">&lt;property</span><span class="ot"> name</span> <span class="ot">=</span><span class="st">&quot;sqlhelper.mybatis.pagination.count&quot;</span><span class="ot"> value=</span><span class="st">&quot;useLastPageIfPageNoOut&quot;</span> <span class="kw">/&gt;</span>       </a>
-<a class="sourceLine" id="cb8-24" title="24">        <span class="kw">&lt;property</span><span class="ot"> name</span> <span class="ot">=</span><span class="st">&quot;sqlhelper.mybatis.pagination.count&quot;</span><span class="ot"> value=</span><span class="st">&quot;_COUNT&quot;</span> <span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb8-22" title="22">        <span class="kw">&lt;property</span><span class="ot"> name</span> <span class="ot">=</span><span class="st">&quot;sqlhelper.mybatis.pagination.defaultPageSize&quot;</span><span class="ot"> value=</span><span class="st">&quot;defaultPageSize&quot;</span> <span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb8-23" title="23">        <span class="kw">&lt;property</span><span class="ot"> name</span> <span class="ot">=</span><span class="st">&quot;sqlhelper.mybatis.pagination.useLastPageIfPageNoOut&quot;</span><span class="ot"> value=</span><span class="st">&quot;useLastPageIfPageNoOut&quot;</span> <span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb8-24" title="24">        <span class="kw">&lt;property</span><span class="ot"> name</span> <span class="ot">=</span><span class="st">&quot;sqlhelper.mybatis.pagination.countSuffix&quot;</span><span class="ot"> value=</span><span class="st">&quot;_COUNT&quot;</span> <span class="kw">/&gt;</span></a>
 <a class="sourceLine" id="cb8-25" title="25">    <span class="kw">&lt;/plugin&gt;</span></a>
 <a class="sourceLine" id="cb8-26" title="26"><span class="kw">&lt;/plugins&gt;</span></a></code></pre></div></li>
-<li><p>Usage</p>
+</ol>
+</div>
+<div id="sqlhelper_mybatis_usage" class="section level3">
+<h3><span class="header-section-number">5.2.2</span> Usage</h3>
 <div class="sourceCode" id="cb9"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb9-1" title="1">    <span class="at">@GetMapping</span>(<span class="st">&quot;/_useMyBatis&quot;</span>)</a>
 <a class="sourceLine" id="cb9-2" title="2">    <span class="kw">public</span> PagingResult <span class="fu">list_useMyBatis</span>(</a>
 <a class="sourceLine" id="cb9-3" title="3">            <span class="at">@RequestParam</span>(name = <span class="st">&quot;pageNo&quot;</span>, required = <span class="kw">false</span>) <span class="bu">Integer</span> pageNo,</a>
@@ -269,12 +276,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb9-14" title="14">        json = JSONBuilderProvider.<span class="fu">simplest</span>().<span class="fu">toJson</span>(users);</a>
 <a class="sourceLine" id="cb9-15" title="15">        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(json);</a>
 <a class="sourceLine" id="cb9-16" title="16">        <span class="kw">return</span> request.<span class="fu">getResult</span>();</a>
-<a class="sourceLine" id="cb9-17" title="17">    }</a></code></pre></div></li>
-</ol>
+<a class="sourceLine" id="cb9-17" title="17">    }</a></code></pre></div>
 <p>you can find more examples from <strong>UserController</strong> class in <a href="https://github.com/fangjinuo/sqlhelper/blob/master/sqlhelper-examples/src/main/java/com/jn/sqlhelper/examples/common/controller/UserController.java">sqlhelper-exmples</a></p>
 </div>
 <div id="sqlhelper_mybatis_configuration" class="section level3">
-<h3><span class="header-section-number">5.2.2</span> specified configurations</h3>
+<h3><span class="header-section-number">5.2.3</span> specified configurations</h3>
 <p>to performance, supply a count sql statement cache , you can configure it like:</p>
 <ul>
 <li><strong><em>countCacheInitCapacity</em></strong>: the initial capacity of count sql statement cache, the default value is <strong>10</strong></li>
@@ -287,8 +293,62 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 <div id="sqlhelper_mybatis_springboot" class="section level2">
-<h2><span class="header-section-number">5.3</span> MyBatis + Spring Boot Application</h2>
+<h2><span class="header-section-number">5.3</span> MyBatis + Spring Boot</h2>
+<hr />
+<div id="sqlhelper_mybatis_springboot_installation" class="section level3">
+<h3><span class="header-section-number">5.3.1</span> installation</h3>
+<ol style="list-style-type: decimal">
+<li><p>import dependencies:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode xml"><code class="sourceCode xml"><a class="sourceLine" id="cb10-1" title="1"><span class="kw">&lt;dependency&gt;</span></a>
+<a class="sourceLine" id="cb10-2" title="2">    <span class="kw">&lt;groupId&gt;</span>com.github.fangjinuo.sqlhelper<span class="kw">&lt;/groupId&gt;</span></a>
+<a class="sourceLine" id="cb10-3" title="3">    <span class="kw">&lt;artifactId&gt;</span>sqlhelper-mybatis-spring-boot-starter<span class="kw">&lt;/artifactId&gt;</span></a>
+<a class="sourceLine" id="cb10-4" title="4">    <span class="kw">&lt;version&gt;</span>${sqlhelper.version}<span class="kw">&lt;/version&gt;</span></a>
+<a class="sourceLine" id="cb10-5" title="5"><span class="kw">&lt;/dependency&gt;</span></a></code></pre></div></li>
+<li><p>configure applcation.yml (Optional):</p></li>
+</ol>
+<div class="sourceCode" id="cb11"><pre class="sourceCode yml"><code class="sourceCode yaml"><a class="sourceLine" id="cb11-1" title="1"><span class="fu">sqlhelper:</span></a>
+<a class="sourceLine" id="cb11-2" title="2">  <span class="fu">mybatis:</span></a>
+<a class="sourceLine" id="cb11-3" title="3">    <span class="fu">instrumentor:</span></a>
+<a class="sourceLine" id="cb11-4" title="4">      <span class="fu">cache-instrumented-sql:</span><span class="at"> </span><span class="ch">true</span></a>
+<a class="sourceLine" id="cb11-5" title="5">      <span class="fu">subquery-paging-start-flag:</span><span class="at"> </span><span class="st">&quot;[PAGING_StART]&quot;</span></a>
+<a class="sourceLine" id="cb11-6" title="6">      <span class="fu">subquery-paging-end-flag:</span><span class="at"> </span><span class="st">&quot;[PAGING_END]&quot;</span></a>
+<a class="sourceLine" id="cb11-7" title="7">    <span class="fu">pagination:</span></a>
+<a class="sourceLine" id="cb11-8" title="8">      <span class="fu">count:</span><span class="at"> </span><span class="ch">true</span></a>
+<a class="sourceLine" id="cb11-9" title="9">      <span class="fu">default-page-size:</span><span class="at"> </span><span class="dv">10</span></a>
+<a class="sourceLine" id="cb11-10" title="10">      <span class="fu">use-last-page-if-page-no-out:</span><span class="at"> </span><span class="ch">true</span></a>
+<a class="sourceLine" id="cb11-11" title="11">      <span class="fu">count-suffix:</span><span class="at"> _COUNT</span></a></code></pre></div>
+<p>or configure application.properteis (Optional)</p>
+<pre class="properties"><code>sqlhelper.mybatis.instrumentor.cacheInstrumentedSql=true
+sqlhelper.mybatis.instrumentor.dialect=mysql
+sqlhelper.mybatis.instrumentor.subqueryPagingStartFlag=[PAGING_START]
+sqlhelper.mybatis.instrumentor.subqueryPagingStartFlag=[PAGING_END]
+sqlhelper.mybatis.count= true
+sqlhelper.mybatis.defaultPageSize= 10
+sqlhelper.mybatis.countSuffix=_COUNT</code></pre>
+<p>more configuration reference : <a href="sqlhelper-pagination.html#pagination_configuration">Paginagion Configuration</a>、<a href="sqlhelper-pagination.html#sqlhelper_mybatis_configuration">Mybatis specified configuration</a></p>
+</div>
+<div id="sqlhelper_mybatis_spring_usage" class="section level3">
+<h3><span class="header-section-number">5.3.2</span> Usage</h3>
+<div class="sourceCode" id="cb13"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb13-1" title="1">    <span class="at">@GetMapping</span>(<span class="st">&quot;/_useMyBatis&quot;</span>)</a>
+<a class="sourceLine" id="cb13-2" title="2">    <span class="kw">public</span> PagingResult <span class="fu">list_useMyBatis</span>(</a>
+<a class="sourceLine" id="cb13-3" title="3">            <span class="at">@RequestParam</span>(name = <span class="st">&quot;pageNo&quot;</span>, required = <span class="kw">false</span>) <span class="bu">Integer</span> pageNo,</a>
+<a class="sourceLine" id="cb13-4" title="4">            <span class="at">@RequestParam</span>(name = <span class="st">&quot;pageSize&quot;</span>, required = <span class="kw">false</span>) <span class="bu">Integer</span> pageSize,</a>
+<a class="sourceLine" id="cb13-5" title="5">            <span class="at">@RequestParam</span>(name = <span class="st">&quot;sort&quot;</span>, required = <span class="kw">false</span>) <span class="bu">String</span> sort) {</a>
+<a class="sourceLine" id="cb13-6" title="6">        User queryCondition = <span class="kw">new</span> <span class="fu">User</span>();</a>
+<a class="sourceLine" id="cb13-7" title="7">        queryCondition.<span class="fu">setAge</span>(<span class="dv">10</span>);</a>
+<a class="sourceLine" id="cb13-8" title="8"></a>
+<a class="sourceLine" id="cb13-9" title="9">        PagingRequest request = SqlPaginations.<span class="fu">preparePagination</span>(pageNo == <span class="kw">null</span> ? <span class="dv">1</span> : pageNo, pageSize == <span class="kw">null</span> ? -<span class="dv">1</span> : pageSize, sort);</a>
+<a class="sourceLine" id="cb13-10" title="10"></a>
+<a class="sourceLine" id="cb13-11" title="11">        <span class="bu">List</span>&lt;User&gt; users = userDao.<span class="fu">selectByLimit</span>(queryCondition);</a>
+<a class="sourceLine" id="cb13-12" title="12">        <span class="bu">String</span> json = JSONBuilderProvider.<span class="fu">simplest</span>().<span class="fu">toJson</span>(request.<span class="fu">getResult</span>());</a>
+<a class="sourceLine" id="cb13-13" title="13">        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(json);</a>
+<a class="sourceLine" id="cb13-14" title="14">        json = JSONBuilderProvider.<span class="fu">simplest</span>().<span class="fu">toJson</span>(users);</a>
+<a class="sourceLine" id="cb13-15" title="15">        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(json);</a>
+<a class="sourceLine" id="cb13-16" title="16">        <span class="kw">return</span> request.<span class="fu">getResult</span>();</a>
+<a class="sourceLine" id="cb13-17" title="17">    }</a></code></pre></div>
+<p>you can find more examples from <strong>UserController</strong> class in <a href="https://github.com/fangjinuo/sqlhelper/blob/master/sqlhelper-examples/src/main/java/com/jn/sqlhelper/examples/common/controller/UserController.java">sqlhelper-exmples</a></p>
 
+</div>
 </div>
 <div id="sqlhelper_mybatisplus_springboot" class="section level2">
 <h2><span class="header-section-number">5.4</span> MyBatis + MyBatis-plus + Spring Boot Application</h2>
@@ -326,7 +386,7 @@ gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
 "sharing": {
 "github": false,
-"facebook": true,
+"facebook": false,
 "twitter": false,
 "linkedin": false,
 "weibo": true,
@@ -351,7 +411,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": [["toturial.pdf", "PDF"], ["toturial.epub", "EPUB"]],
+"download": null,
 "toc": {
 "collapse": "subsection",
 "scroll_highlight": true

@@ -153,20 +153,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.3" data-path="sqlhelper-outline.html"><a href="sqlhelper-outline.html#supports-databases"><i class="fa fa-check"></i><b>4.3</b> Supports Databases</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="sqlhelper-pagination.html"><a href="sqlhelper-pagination.html"><i class="fa fa-check"></i><b>5</b> Pagination</a><ul>
-<li class="chapter" data-level="5.1" data-path="sqlhelper-pagination.html"><a href="sqlhelper-pagination.html#sqlhelper_configuration"><i class="fa fa-check"></i><b>5.1</b> Configuration</a></li>
+<li class="chapter" data-level="5.1" data-path="sqlhelper-pagination.html"><a href="sqlhelper-pagination.html#pagination_configuration"><i class="fa fa-check"></i><b>5.1</b> Configuration</a></li>
 <li class="chapter" data-level="5.2" data-path="sqlhelper-pagination.html"><a href="sqlhelper-pagination.html#sqlhelper_mybatis"><i class="fa fa-check"></i><b>5.2</b> MyBatis Application</a><ul>
 <li class="chapter" data-level="5.2.1" data-path="sqlhelper-pagination.html"><a href="sqlhelper-pagination.html#sqlhelper_mybatis_installation"><i class="fa fa-check"></i><b>5.2.1</b> installation</a></li>
-<li class="chapter" data-level="5.2.2" data-path="sqlhelper-pagination.html"><a href="sqlhelper-pagination.html#sqlhelper_mybatis_configuration"><i class="fa fa-check"></i><b>5.2.2</b> specified configurations</a></li>
+<li class="chapter" data-level="5.2.2" data-path="sqlhelper-pagination.html"><a href="sqlhelper-pagination.html#sqlhelper_mybatis_usage"><i class="fa fa-check"></i><b>5.2.2</b> Usage</a></li>
+<li class="chapter" data-level="5.2.3" data-path="sqlhelper-pagination.html"><a href="sqlhelper-pagination.html#sqlhelper_mybatis_configuration"><i class="fa fa-check"></i><b>5.2.3</b> specified configurations</a></li>
 </ul></li>
-<li class="chapter" data-level="5.3" data-path="sqlhelper-pagination.html"><a href="sqlhelper-pagination.html#sqlhelper_mybatis_springboot"><i class="fa fa-check"></i><b>5.3</b> MyBatis + Spring Boot Application</a></li>
+<li class="chapter" data-level="5.3" data-path="sqlhelper-pagination.html"><a href="sqlhelper-pagination.html#sqlhelper_mybatis_springboot"><i class="fa fa-check"></i><b>5.3</b> MyBatis + Spring Boot</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="sqlhelper-pagination.html"><a href="sqlhelper-pagination.html#sqlhelper_mybatis_springboot_installation"><i class="fa fa-check"></i><b>5.3.1</b> installation</a></li>
+<li class="chapter" data-level="5.3.2" data-path="sqlhelper-pagination.html"><a href="sqlhelper-pagination.html#sqlhelper_mybatis_spring_usage"><i class="fa fa-check"></i><b>5.3.2</b> Usage</a></li>
+</ul></li>
 <li class="chapter" data-level="5.4" data-path="sqlhelper-pagination.html"><a href="sqlhelper-pagination.html#sqlhelper_mybatisplus_springboot"><i class="fa fa-check"></i><b>5.4</b> MyBatis + MyBatis-plus + Spring Boot Application</a></li>
 <li class="chapter" data-level="5.5" data-path="sqlhelper-pagination.html"><a href="sqlhelper-pagination.html#sqlhelper_mirgate_pagehelper"><i class="fa fa-check"></i><b>5.5</b> Migrate from PageHelper</a></li>
 <li class="chapter" data-level="5.6" data-path="sqlhelper-pagination.html"><a href="sqlhelper-pagination.html#sqlhelper_springjdbc"><i class="fa fa-check"></i><b>5.6</b> SpringJDBC Application</a></li>
 </ul></li>
 <li class="divider"></li>
-<li><a href="https://fangjinuo.github.io" target="blank">Github Pages</a></li>
-<li><a href="https://github.com/fangjinuo/book" target="blank">Github</a></li>
-<li><a href="https://fangjinuo.gitee.io/docs" target="blank">Gitee Pages</a></li>
+<li><a href="https://fangjinuo.github.io" target="_blank">Github Pages</a></li>
+<li><a href="https://github.com/fangjinuo/book" target="_blank">Github</a></li>
+<li><a href="https://fangjinuo.gitee.io/docs" target="_blank">Gitee Pages</a></li>
 
 </ul>
 
@@ -490,7 +494,7 @@ gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
 "sharing": {
 "github": false,
-"facebook": true,
+"facebook": false,
 "twitter": false,
 "linkedin": false,
 "weibo": true,
@@ -515,7 +519,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": [["toturial.pdf", "PDF"], ["toturial.epub", "EPUB"]],
+"download": null,
 "toc": {
 "collapse": "subsection",
 "scroll_highlight": true
