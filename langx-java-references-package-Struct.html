@@ -4,21 +4,21 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 2 Installation | Tutorial</title>
-  <meta name="description" content="Chapter 2 Installation | Tutorial for langx-java, easyjson, sqlhelper" />
+  <title>Chapter 4 Common Struct | Tutorial</title>
+  <meta name="description" content="Chapter 4 Common Struct | Tutorial for langx-java, easyjson, sqlhelper" />
   <meta name="generator" content="bookdown 0.16 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 2 Installation | Tutorial" />
+  <meta property="og:title" content="Chapter 4 Common Struct | Tutorial" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="Chapter 2 Installation | Tutorial for langx-java, easyjson, sqlhelper" />
+  <meta property="og:description" content="Chapter 4 Common Struct | Tutorial for langx-java, easyjson, sqlhelper" />
   <meta name="github-repo" content="fangjinuo/book" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 2 Installation | Tutorial" />
+  <meta name="twitter:title" content="Chapter 4 Common Struct | Tutorial" />
   
-  <meta name="twitter:description" content="Chapter 2 Installation | Tutorial for langx-java, easyjson, sqlhelper" />
+  <meta name="twitter:description" content="Chapter 4 Common Struct | Tutorial for langx-java, easyjson, sqlhelper" />
   
 
 <meta name="author" content="fangjinuo" />
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="langx-java-outline.html"/>
-<link rel="next" href="lanx-java-references-utils.html"/>
+<link rel="prev" href="lanx-java-references-utils.html"/>
+<link rel="next" href="sqlhelper-outline.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -216,26 +216,101 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="langx-java_installation" class="section level1">
-<h1><span class="header-section-number">Chapter 2</span> Installation</h1>
-<div class="sourceCode" id="cb1"><pre class="sourceCode xml"><code class="sourceCode xml"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">&lt;dependency&gt;</span></a>
-<a class="sourceLine" id="cb1-2" title="2">    <span class="kw">&lt;groupId&gt;</span>com.github.fangjinuo.langx<span class="kw">&lt;/groupId&gt;</span></a>
-<a class="sourceLine" id="cb1-3" title="3">    <span class="kw">&lt;artifiedId&gt;</span>langx-java<span class="kw">&lt;/artifiedId&gt;</span></a>
-<a class="sourceLine" id="cb1-4" title="4">    <span class="kw">&lt;version&gt;</span>${langx.version}<span class="kw">&lt;/version&gt;</span></a>
-<a class="sourceLine" id="cb1-5" title="5"><span class="kw">&lt;/dependency&gt;</span></a></code></pre></div>
+<div id="langx-java_references_package_Struct" class="section level1">
+<h1><span class="header-section-number">Chapter 4</span> Common Struct</h1>
+<p>Holder, Pair, Entry etc</p>
+<div id="langx-java_references_struct_Pair" class="section level2">
+<h2><span class="header-section-number">4.1</span> Pair</h2>
+<p>the key-value pair</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb13-1" title="1"><span class="kw">public</span> <span class="kw">abstract</span> <span class="kw">class</span> Pair&lt;K, V&gt; {</a>
+<a class="sourceLine" id="cb13-2" title="2">    <span class="kw">private</span> K key;</a>
+<a class="sourceLine" id="cb13-3" title="3">    <span class="kw">private</span> V value;</a>
+<a class="sourceLine" id="cb13-4" title="4"></a>
+<a class="sourceLine" id="cb13-5" title="5">    <span class="kw">public</span> K <span class="fu">getKey</span>() {</a>
+<a class="sourceLine" id="cb13-6" title="6">        <span class="kw">return</span> key;</a>
+<a class="sourceLine" id="cb13-7" title="7">    }</a>
+<a class="sourceLine" id="cb13-8" title="8"></a>
+<a class="sourceLine" id="cb13-9" title="9">    <span class="kw">public</span> V <span class="fu">getValue</span>() {</a>
+<a class="sourceLine" id="cb13-10" title="10">        <span class="kw">return</span> value;</a>
+<a class="sourceLine" id="cb13-11" title="11">    }</a>
+<a class="sourceLine" id="cb13-12" title="12"></a>
+<a class="sourceLine" id="cb13-13" title="13">    <span class="kw">public</span> <span class="dt">void</span> <span class="fu">setKey</span>(K key) {</a>
+<a class="sourceLine" id="cb13-14" title="14">        <span class="kw">this</span>.<span class="fu">key</span> = key;</a>
+<a class="sourceLine" id="cb13-15" title="15">    }</a>
+<a class="sourceLine" id="cb13-16" title="16"></a>
+<a class="sourceLine" id="cb13-17" title="17">    <span class="kw">public</span> V <span class="fu">setValue</span>(V value) {</a>
+<a class="sourceLine" id="cb13-18" title="18">        V old = <span class="kw">this</span>.<span class="fu">value</span>;</a>
+<a class="sourceLine" id="cb13-19" title="19">        <span class="kw">this</span>.<span class="fu">value</span> = value;</a>
+<a class="sourceLine" id="cb13-20" title="20">        <span class="kw">return</span> old;</a>
+<a class="sourceLine" id="cb13-21" title="21">    }</a>
+<a class="sourceLine" id="cb13-22" title="22"></a>
+<a class="sourceLine" id="cb13-23" title="23"></a>
+<a class="sourceLine" id="cb13-24" title="24">    <span class="at">@Override</span></a>
+<a class="sourceLine" id="cb13-25" title="25">    <span class="kw">public</span> <span class="dt">boolean</span> <span class="fu">equals</span>(<span class="bu">Object</span> object) {</a>
+<a class="sourceLine" id="cb13-26" title="26">        <span class="kw">if</span> (<span class="kw">this</span> == object) {</a>
+<a class="sourceLine" id="cb13-27" title="27">            <span class="kw">return</span> <span class="kw">true</span>;</a>
+<a class="sourceLine" id="cb13-28" title="28">        }</a>
+<a class="sourceLine" id="cb13-29" title="29">        <span class="kw">if</span> (object == <span class="kw">null</span> || <span class="fu">getClass</span>() != object.<span class="fu">getClass</span>()) {</a>
+<a class="sourceLine" id="cb13-30" title="30">            <span class="kw">return</span> <span class="kw">false</span>;</a>
+<a class="sourceLine" id="cb13-31" title="31">        }</a>
+<a class="sourceLine" id="cb13-32" title="32">        Pair that = (Pair) object;</a>
+<a class="sourceLine" id="cb13-33" title="33">        <span class="kw">return</span> key.<span class="fu">equals</span>(that.<span class="fu">key</span>) &amp;&amp; value.<span class="fu">equals</span>(that.<span class="fu">key</span>);</a>
+<a class="sourceLine" id="cb13-34" title="34">    }</a>
+<a class="sourceLine" id="cb13-35" title="35"></a>
+<a class="sourceLine" id="cb13-36" title="36">}</a></code></pre></div>
+<p>all subtypes:</p>
+<ul>
+<li>DoubleNameValuePair</li>
+<li>Entry</li>
+<li>IntegerNameValuePair</li>
+<li>LongNameValuePair</li>
+<li>NameValuePair</li>
+<li>StringNameValuePair</li>
+</ul>
+</div>
+<div id="langx-java_references_struct_Entry" class="section level2">
+<h2><span class="header-section-number">4.2</span> Entry</h2>
+<p>Entry extends the Pair class, and the following methods are provided</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb14-1" title="1"><span class="kw">public</span> <span class="dt">static</span> Entry&lt;<span class="bu">String</span>, <span class="bu">String</span>&gt; <span class="fu">newEntry</span>(<span class="bu">String</span> keyValue, <span class="bu">String</span> spec);</a>
+<a class="sourceLine" id="cb14-2" title="2"><span class="kw">public</span> <span class="dt">static</span> <span class="bu">Map</span>&lt;<span class="bu">String</span>, <span class="bu">String</span>&gt; <span class="fu">getMap</span>(<span class="bu">String</span> str, <span class="bu">String</span> keyValueSpec, <span class="bu">String</span> entrySpec);</a>
+<a class="sourceLine" id="cb14-3" title="3"><span class="kw">public</span> <span class="dt">static</span> <span class="bu">List</span>&lt;<span class="bu">Map</span>&lt;<span class="bu">String</span>, <span class="bu">String</span>&gt;&gt; <span class="fu">getMapList</span>(<span class="bu">String</span> src, <span class="bu">String</span> keyValueSpec, <span class="bu">String</span> entrySpec, <span class="bu">String</span> listSpecFlag);</a></code></pre></div>
+</div>
+<div id="langx-java_references_struct_Holder" class="section level2">
+<h2><span class="header-section-number">4.3</span> Holder</h2>
+<p>the value holder</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb15-1" title="1"><span class="kw">public</span> <span class="kw">class</span> <span class="bu">Holder</span>&lt;V&gt; {</a>
+<a class="sourceLine" id="cb15-2" title="2">    <span class="kw">private</span> V v;</a>
+<a class="sourceLine" id="cb15-3" title="3"></a>
+<a class="sourceLine" id="cb15-4" title="4">    <span class="kw">public</span> <span class="bu">Holder</span>() {</a>
+<a class="sourceLine" id="cb15-5" title="5">    }</a>
+<a class="sourceLine" id="cb15-6" title="6"></a>
+<a class="sourceLine" id="cb15-7" title="7">    <span class="kw">public</span> <span class="bu">Holder</span>(<span class="dt">final</span> V value) {</a>
+<a class="sourceLine" id="cb15-8" title="8">        <span class="kw">this</span>.<span class="fu">set</span>(value);</a>
+<a class="sourceLine" id="cb15-9" title="9">    }</a>
+<a class="sourceLine" id="cb15-10" title="10"></a>
+<a class="sourceLine" id="cb15-11" title="11">    <span class="kw">public</span> <span class="dt">void</span> <span class="fu">set</span>(<span class="dt">final</span> V value) {</a>
+<a class="sourceLine" id="cb15-12" title="12">        <span class="kw">this</span>.<span class="fu">v</span> = value;</a>
+<a class="sourceLine" id="cb15-13" title="13">    }</a>
+<a class="sourceLine" id="cb15-14" title="14"></a>
+<a class="sourceLine" id="cb15-15" title="15">    <span class="kw">public</span> V <span class="fu">get</span>() {</a>
+<a class="sourceLine" id="cb15-16" title="16">        <span class="kw">return</span> <span class="kw">this</span>.<span class="fu">v</span>;</a>
+<a class="sourceLine" id="cb15-17" title="17">    }</a>
+<a class="sourceLine" id="cb15-18" title="18"></a>
+<a class="sourceLine" id="cb15-19" title="19">}</a>
+<a class="sourceLine" id="cb15-20" title="20"></a></code></pre></div>
 
+</div>
 </div>
 
 
 
-</div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="langx-java-outline.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="lanx-java-references-utils.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="lanx-java-references-utils.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="sqlhelper-outline.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -266,7 +341,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/fangjinuo/book/edit/master/langx-java/installation.Rmd",
+"link": "https://github.com/fangjinuo/book/edit/master/langx-java/references/struct/index.Rmd",
 "text": "Edit"
 },
 "history": {
